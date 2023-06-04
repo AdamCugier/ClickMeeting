@@ -1,0 +1,83 @@
+@import '../../assets/variables';
+
+.cm-tooltip-provider {
+  position: relative;
+
+  &:hover .cm-tooltip {
+    opacity: 1;
+  }
+
+  .cm-tooltip {
+    color: #ffffff;
+    background: $bg-color--primary;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.7s;
+    font-size: 12px;
+    padding: 5px 7px;
+    border-radius: 5px;
+    text-align: center;
+    width: 75px;
+
+    &--right {
+      top: calc(50% - 12.5px);
+      left: calc(100% + 10px);
+    }
+
+    &--left {
+      top: calc(50% - 12.5px);
+      right: calc(100% + 10px);
+    }
+
+    &--top {
+      bottom: calc(100% + 10px);
+      left: calc(50% - 37.5px);
+    }
+
+    &--bottom {
+      top: calc(100% + 10px);
+      left: calc(50% - 37.5px);
+    }
+  }
+
+  &:hover .cm-tooltip {
+    &::after {
+      content: "";
+      position: absolute;
+      border-width: 5px;
+      border-style: solid;
+    }
+
+    &--right {
+      &::after {
+        top: calc(50% - 4px);
+        right: 100.5%;
+        border-color: transparent $bg-color--primary transparent transparent;
+      }
+    }
+
+    &--left {
+      &::after {
+        top: calc(50% - 4px);
+        left: calc(100.5% - 5px);
+        border-color: transparent transparent transparent $bg-color--primary;
+      }
+    }
+
+    &--top {
+      &::after {
+        top: 100%;
+        left: calc(50% - 5px);
+        border-color: $bg-color--primary transparent transparent transparent;
+      }
+    }
+
+    &--bottom {
+      &::after {
+        bottom: 100%;
+        left: calc(50% - 5px);
+        border-color: transparent transparent $bg-color--primary transparent;
+      }
+    }
+  }
+}
