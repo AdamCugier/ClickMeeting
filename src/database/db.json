@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Adam Cugier",
+      "login": "adam_click",
+      "password": "qwerty"
+    }
+  ]
+}
