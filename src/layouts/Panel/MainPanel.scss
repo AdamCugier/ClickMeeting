@@ -1,0 +1,12 @@
+.main-panel-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: [nav] 60px [page-view] auto;
+  grid-template-rows: 100vh;
+  &--nav {
+    grid-column-start: nav;
+    grid-column-end: nav;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+}

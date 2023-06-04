@@ -1,0 +1,46 @@
+@import 'src/assets/variables';
+
+.cm-nav--item {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: $transition;
+  position: relative;
+
+  &:before {
+    width: 2px;
+    height: 100%;;
+    background-color: $bg-color--secondary;
+    position: absolute;
+    left: 0;
+    content: '';
+    opacity: 0;
+    z-index: 10;
+    border-radius: 2px;
+    transition: $transition;
+  }
+
+  &:hover, {
+    background-color: darken($bg-color--primary, 10%);
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &-icon {
+    height: 18px;
+    color: white;
+  }
+}
+.active.router-link-exact-active {
+  .cm-nav--item {
+    background-color: darken($bg-color--primary, 10%);
+    &:before {
+      opacity: 1;
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/vue3';
 
-import Button from './Button.vue';
+import Button from '../../components/Button/Button.vue';
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta = {
-    title: 'Example/Button',
+    title: 'Button',
     component: Button,
     // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
     tags: ['autodocs'],
@@ -28,9 +28,25 @@ export const Primary: Story = {
     },
 };
 
+export const PrimaryDisabled: Story = {
+    args: {
+        primary: true,
+        label: 'Button',
+        disabled: true,
+    },
+};
+
 export const Secondary: Story = {
     args: {
         primary: false,
         label: 'Button',
+    },
+};
+
+export const SecondaryDisabled: Story = {
+    args: {
+        primary: false,
+        label: 'Button',
+        disabled: true
     },
 };
