@@ -15,8 +15,7 @@
   },
   "dependencies": {
     "vue": "^3.3.2",
-    "vue-router": "^4.2.0",
-    "vuex": "^4.0.2"
+    "vue-router": "^4.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.18",
@@ -36,6 +35,7 @@
     "npm-run-all": "^4.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sass": "^1.62.1",
     "storybook": "^7.0.18",
     "typescript": "~5.0.4",
     "vite": "^4.3.5",
