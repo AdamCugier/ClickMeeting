@@ -15,9 +15,4 @@
 <script lang="ts" setup>
 import './MainPanel.scss';
 import Nav from "@/components/Nav/Nav.vue";
-import useUser from "@/composables/useUser.js";
-
-const {user} = useUser()
-
-
 </script>

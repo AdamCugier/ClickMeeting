@@ -15,8 +15,7 @@ const useApi = (): useApiI => {
             headers: {"Content-Type": "application/json"},
         }
         if (body) options.body = JSON.stringify(body)
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/${url}`, options);
-        return await response.json();
+        return await fetch(`${import.meta.env.VITE_API_URL}/${url}`, options);
     }
 
     return {
