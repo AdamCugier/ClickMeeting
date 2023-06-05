@@ -9,7 +9,7 @@
 import {computed} from "vue";
 import './Tooltip.scss'
 
-const props = withDefaults(defineProps<{
+interface TooltipI {
   /**
    * Tooltip text to display
    */
@@ -18,7 +18,9 @@ const props = withDefaults(defineProps<{
    * Tooltip position
    */
   position?: 'left' | 'top' | 'right' | 'bottom',
-}>(), {position: 'right'});
+}
+
+const props = withDefaults(defineProps<TooltipI>(), {position: 'right'});
 
 const classes = computed(() => ({
   'cm-tooltip': true,

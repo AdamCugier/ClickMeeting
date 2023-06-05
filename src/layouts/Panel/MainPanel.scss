@@ -1,12 +1,29 @@
-.main-panel-container {
-  display: grid;
-  width: 100%;
-  grid-template-columns: [nav] 60px [page-view] auto;
-  grid-template-rows: 100vh;
+.cm-main-panel {
+  &--container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: [nav] 60px [page-view] auto;
+    grid-template-rows: [body] calc(100vh - 30px) [footer] 30px;
+  }
+
   &--nav {
     grid-column-start: nav;
     grid-column-end: nav;
-    grid-row-start: 1;
-    grid-row-end: 1;
+    grid-row-start: body;
+    grid-row-end: body;
+  }
+
+  &--footer {
+    grid-column-start: page-view;
+    grid-column-end: page-view;
+    grid-row-start: footer;
+    grid-row-end: footer;
+    text-align: center;
+
+    span {
+      font-size: 13px;
+      color: rgba(27, 31, 43, 0.27);
+      font-weight: 900;
+    }
   }
 }

@@ -1,0 +1,18 @@
+.cm-page-layout {
+  &--container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: [header] 100px [content] auto;
+  }
+  &--header {
+    grid-row-start: header;
+    grid-row-end: header;
+    padding: 20px;
+  }
+  &--content {
+    grid-row-start: content;
+    grid-row-end: content;
+    padding: 20px;
+  }
+}

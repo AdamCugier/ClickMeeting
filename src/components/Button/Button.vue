@@ -6,7 +6,7 @@
 import './Button.scss';
 import {computed} from 'vue';
 
-const props = withDefaults(defineProps<{
+interface ButtonI {
   /**
    * The label of the button
    */
@@ -20,7 +20,9 @@ const props = withDefaults(defineProps<{
    * Disable or enable button
    */
   disabled?: boolean
-}>(), {primary: false, disabled: false});
+}
+
+const props = withDefaults(defineProps<ButtonI>(), {primary: false, disabled: false});
 
 const emit = defineEmits<{
   /**

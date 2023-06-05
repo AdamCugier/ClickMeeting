@@ -1,16 +1,20 @@
-<script setup lang="ts">
-
-import MainPanel from "@/layouts/Panel/MainPanel.vue";
-</script>
-
 <template>
   <MainPanel>
     <template #view>
-      MESSAGES
+      <PageLayout>
+        <template #header>
+          Messages page
+        </template>
+        <template #content>
+
+        </template>
+      </PageLayout>
     </template>
   </MainPanel>
 </template>
 
-<style scoped>
+<script setup lang="ts">
 
-</style>
+import MainPanel from "@/layouts/Panel/MainPanel.vue";
+import PageLayout from "@/layouts/PageView/PageLayout.vue";
+</script>
