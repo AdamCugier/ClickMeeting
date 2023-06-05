@@ -1,4 +1,7 @@
 .cm-main-panel {
+  &--page-view {
+    overflow-y: auto;
+  }
   &--container {
     display: grid;
     width: 100%;

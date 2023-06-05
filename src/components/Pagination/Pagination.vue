@@ -1,14 +1,24 @@
 <template>
   <div v-if="lastPage > 1">
-    <button v-if="activePage > 1" @click="() => changePage(1)">first</button>
-    <button v-if="activePage > 2" @click="() => changePage(activePage - 1)">prev</button>
-    <button>{{ activePage }}</button>
-    <button v-if="activePage < lastPage -1" @click="() => changePage(activePage + 1)">next</button>
-    <button v-if="activePage !== lastPage" @click="() => changePage(lastPage)">last</button>
+    <div class="cm-pagination">
+      <button class="cm-pagination--btn" v-if="activePage > 1" @click="() => changePage(1)">
+        <font-awesome-icon icon="fa-solid fa-angles-left"/>
+      </button>
+      <button class="cm-pagination--btn" v-if="activePage > 2" @click="() => changePage(activePage - 1)">
+        {{ activePage - 1 }}
+      </button>
+      <button class="cm-pagination--btn cm-pagination--btn-active">{{ activePage }}</button>
+      <button class="cm-pagination--btn" v-if="activePage < lastPage -1" @click="() => changePage(activePage + 1)">
+        {{ activePage + 1 }}
+      </button>
+      <button class="cm-pagination--btn" v-if="activePage !== lastPage" @click="() => changePage(lastPage)">
+        <font-awesome-icon icon="fa-solid fa-angles-right"/>
+      </button>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
-
+import './Pagination.scss'
 
 interface PaginationI {
   /**

@@ -14,7 +14,7 @@ const defaultUser = [
 function createRandomMessage() {
     return {
         id: faker.string.uuid(),
-        title: faker.word.words({count: {min: 3, max: 7}}),
+        title: faker.word.words({count: {min: 2, max: 5}}),
         date: faker.date.between({from: '2023-01-01T00:00:00.000Z', to: '2023-06-01T00:00:00.000Z'}),
         sender: faker.person.fullName(),
         email: faker.internet.email(),

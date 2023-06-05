@@ -26,7 +26,7 @@ export interface MsgsStoreI {
     activePage: number
     links: PaginationI
     loading: boolean
-
+    searchMsg: string
 }
 
 const {fetchData} = useApi()
@@ -45,34 +45,36 @@ const msgsModule = {
         searchMsg: ''
     }),
     mutations: {
-        UPDATE_MESSAGES(state, data: Array<MessageI>) {
+        UPDATE_MESSAGES(state: MsgsStoreI, data: Array<MessageI>) {
             state.messages = data
         },
-        UPDATE_PAGINATION_LINKS(state, data: PaginationI) {
+        UPDATE_PAGINATION_LINKS(state: MsgsStoreI, data: PaginationI) {
             state.links = data
         },
-        TOOGLE_LOADING(state) {
+        TOOGLE_LOADING(state: MsgsStoreI) {
             state.loading = !state.loading
         },
-        SET_ACTIVE_PAGE(state, count: number) {
+        SET_ACTIVE_PAGE(state: MsgsStoreI, count: number) {
             state.activePage = count
         },
-        SET_SEARCH_MSG(state, sentence: string) {
+        SET_ACTIVE_MESSAGE_ID(state: MsgsStoreI, id: string) {
+            state.activeMessageId = id
+        },
+        SET_SEARCH_MSG(state: MsgsStoreI, sentence: string) {
             state.searchMsg = sentence
         },
-        CLEAR_SEARCH(state) {
+        CLEAR_SEARCH(state: MsgsStoreI) {
             state.searchMsg = ''
         },
     },
     actions: {
         async getMessages({commit, state}) {
             commit('TOOGLE_LOADING')
-            await fetchData(`messages?_page=${state.activePage}&_limit=20${state.searchMsg && `q=${state.searchMsg}`}`).then(res => {
+            await fetchData(`messages?_page=${state.activePage}&_limit=10${state.searchMsg && `q=${state.searchMsg}`}`).then(res => {
                 const paginationLinks = parseLinkHeader(res.headers.get('Link'))
                 commit('UPDATE_PAGINATION_LINKS', paginationLinks)
                 return res.json()
             }).then(data => {
-                console.log(data)
                 commit('UPDATE_MESSAGES', data)
             }).catch(() => alert('ERROR ON FETCHING DATA'))
                 .finally(() => commit('TOOGLE_LOADING'))
@@ -84,7 +86,7 @@ const msgsModule = {
         },
         lastPageNumber(state: MsgsStoreI): number {
             const index = state.links.last.indexOf('_page')
-            const str = state.links.last.substring(index + 6, index + 9)
+            const str = state.links.last.substring(index + 6, index + 10)
             const indexOfSpecialChar: number = str.indexOf('&')
             if (indexOfSpecialChar !== -1) {
                 return parseInt(str.substring(0, indexOfSpecialChar))

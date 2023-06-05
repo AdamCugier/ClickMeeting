@@ -1,0 +1,33 @@
+@import '../../assets/variables';
+
+.cm-messages {
+  &--table {
+    width: 100%;
+    border-spacing: 0;
+    padding: 25px;
+    &--header {
+      color: white;
+      background-color: $bg-color--primary;
+      border-color: $bg-color--primary;
+      outline: none;
+      font-weight: 300;
+      font-size: 16px;
+      th {
+        padding: 10px;
+        text-align: left;
+      }
+    }
+    &--body {
+      cursor: pointer;
+      &:nth-child(2n + 1){
+        background-color: rgba($bg-color--primary, 0.05);
+      }
+      &:hover {
+        background-color: rgba($bg-color--secondary, 0.1);
+      }
+      td {
+        padding: 10px;
+      }
+    }
+  }
+}

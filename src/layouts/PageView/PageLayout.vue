@@ -4,7 +4,9 @@
       <slot name="header"></slot>
     </header>
     <section class="cm-page-layout--content">
-      <slot name="content"></slot>
+      <div class="cm-page-layout--content--container">
+        <slot name="content"></slot>
+      </div>
     </section>
   </div>
 </template>
