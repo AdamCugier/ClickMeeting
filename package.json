@@ -11,7 +11,7 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "db": "json-server --watch src/database/db.json"
+    "db": "json-server --watch src/database/generateData.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -23,6 +23,7 @@
     "vue-router": "^4.2.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "@storybook/addon-essentials": "^7.0.18",
     "@storybook/addon-interactions": "^7.0.18",
     "@storybook/addon-links": "^7.0.18",

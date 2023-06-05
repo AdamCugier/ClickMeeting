@@ -3,7 +3,9 @@
     <template #view>
       <PageLayout>
         <template #header>
-          Messages page
+          <PageHeader>
+
+          </PageHeader>
         </template>
         <template #content>
 
@@ -17,4 +19,5 @@
 
 import MainPanel from "@/layouts/Panel/MainPanel.vue";
 import PageLayout from "@/layouts/PageView/PageLayout.vue";
+import PageHeader from "@/components/PageHeader/PageHeader.vue";
 </script>
