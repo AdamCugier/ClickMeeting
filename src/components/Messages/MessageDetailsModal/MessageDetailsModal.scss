@@ -1,0 +1,15 @@
+.cm-msg-modal {
+  &--header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &--message-details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &--footer {
+    text-align: center;
+  }
+}

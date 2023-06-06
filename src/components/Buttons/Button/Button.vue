@@ -20,9 +20,14 @@ interface ButtonI {
    * Disable or enable button
    */
   disabled?: boolean
+
+  /**
+   * Size of the button
+   */
+  size?: 'sm' | 'md' | 'lg',
 }
 
-const props = withDefaults(defineProps<ButtonI>(), {primary: false, disabled: false});
+const props = withDefaults(defineProps<ButtonI>(), {label: 'button', primary: false, disabled: false, size: 'md'});
 
 const emit = defineEmits<{
   /**
@@ -35,6 +40,9 @@ const classes = computed(() => ({
   'cm-btn': true,
   'cm-btn--primary': props.primary,
   'cm-btn--secondary': !props.primary,
+  'cm-btn--sm': props.size === 'sm',
+  'cm-btn--md': props.size === 'md',
+  'cm-btn--lg': props.size === 'lg',
 }));
 
 const blocked = computed(() => props.disabled)

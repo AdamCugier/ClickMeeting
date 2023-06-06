@@ -1,6 +1,7 @@
 import {computed} from "vue";
 import router from "@/router";
 import useApi from "@/composables/useApi";
+// @ts-ignore
 import {useStore} from "vuex";
 
 interface useUserI {

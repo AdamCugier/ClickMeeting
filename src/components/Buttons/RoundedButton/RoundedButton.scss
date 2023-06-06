@@ -1,0 +1,32 @@
+@import '../../../assets/variables';
+.cm-rounded-btn {
+  transition: 0.3s;
+  background-color: lighten($bg-color--primary, 80%);
+  border-radius: 50%;
+  cursor: pointer;
+  &--primary {
+    color: $bg-color--primary;
+  }
+  &--secondary {
+    color: $bg-color--secondary;
+  }
+  &--sm {
+    font-size: 18px;
+    padding: 5px;
+  }
+  &--md {
+    font-size: 20px;
+    padding: 10px;
+  }
+  &--lg {
+    font-size: 25px;
+    padding: 15px;
+  }
+  &--disabled {
+    cursor: none;
+    pointer-events: none;
+  }
+  &:hover {
+    background-color: lighten($bg-color--primary, 75%);
+  }
+}

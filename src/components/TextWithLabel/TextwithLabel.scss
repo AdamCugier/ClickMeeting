@@ -1,0 +1,25 @@
+.cm-labeled-text{
+  &--wrapper {
+    position: relative;
+    margin-top: 20px;
+  }
+  &--text {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  &--label {
+    font-size: 12px;
+    font-weight: 900;
+    position: absolute;
+    top: -12px;
+  }
+  &--left {
+    text-align: left;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+}

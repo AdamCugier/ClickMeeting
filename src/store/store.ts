@@ -1,3 +1,4 @@
+// @ts-ignore
 import {createStore} from "vuex";
 import navModule from "@/store/Nav/NavModule";
 import userModule from "@/store/User/UserModule";

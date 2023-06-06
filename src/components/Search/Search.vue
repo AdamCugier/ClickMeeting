@@ -23,7 +23,7 @@ const emit = defineEmits<{
   (e: 'onChange', value: string): Event;
 }>();
 
-const handleChange = debounce((e:InputEvent) => {
-  emit("onChange", e.target.value)
+const handleChange = debounce((e: Event) => {
+  emit("onChange", (e.target as HTMLInputElement).value)
 }, 750)
 </script>

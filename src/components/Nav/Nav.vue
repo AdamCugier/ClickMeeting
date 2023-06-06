@@ -16,7 +16,8 @@
 
 <script setup lang="ts">
 import './Nav.scss'
-import NavItem, {NavItemI} from "@/components/Nav/NavItem/NavItem.vue";
+import NavItem from "@/components/Nav/NavItem/NavItem.vue";
+import type {NavItemI} from "@/components/Nav/NavItem/NavItem.vue";
 import useUser from "@/composables/useUser";
 
 const {closeUserSession} = useUser()

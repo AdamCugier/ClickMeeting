@@ -19,7 +19,7 @@ export interface NavItemI {
   /**
    * Icon to display
    */
-  icon: 'fa-house-chimney-window' | 'fa-message'
+  icon: 'fa-house-chimney-window' | 'fa-message' | 'fa-power-off' | string,
   /**
    * Tooltip text
    */

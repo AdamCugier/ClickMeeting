@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import Button from "@/components/Button/Button.vue";
+import Button from "@/components/Buttons/Button/Button.vue";
 import useUser from "@/composables/useUser";
 import router from "@/router";
 

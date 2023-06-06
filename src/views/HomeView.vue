@@ -17,7 +17,7 @@
 import MainPanel from "@/layouts/Panel/MainPanel.vue";
 import PageLayout from "@/layouts/PageView/PageLayout.vue";
 import PageHeader from "@/components/PageHeader/PageHeader.vue";
-import Search from "@/components/Search/Search.vue";
+//@ts-ignore
 import {useStore} from "vuex";
 
 const {state} = useStore()

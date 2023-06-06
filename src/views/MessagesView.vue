@@ -1,9 +1,10 @@
 <template>
   <MainPanel>
     <template #view>
+      <MessageDetailsModal v-if="state.msgsModule.msgModalToggle"/>
       <PageLayout>
         <template #header>
-          <PageHeader icon="fa-message" title="Wiadomości">
+          <PageHeader icon="fs-solid fa-message" title="Wiadomości">
             <template #actions>
             <Search :value="state.msgsModule.searchMsg" @on-change="(value) => findMessages(value)" />
             </template>
@@ -31,11 +32,13 @@
 import MainPanel from "@/layouts/Panel/MainPanel.vue";
 import PageLayout from "@/layouts/PageView/PageLayout.vue";
 import PageHeader from "@/components/PageHeader/PageHeader.vue";
+//@ts-ignore
 import {useStore} from "vuex";
 import Pagination from "@/components/Pagination/Pagination.vue";
 import {onUnmounted} from "vue";
 import Messages from "@/components/Messages/Messages.vue";
 import Search from "@/components/Search/Search.vue";
+import MessageDetailsModal from "@/components/Messages/MessageDetailsModal/MessageDetailsModal.vue";
 
 const {dispatch, state, getters, commit} = useStore()
 

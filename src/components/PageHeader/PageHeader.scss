@@ -7,13 +7,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    &--icon {
-      font-size: 25px;
-      margin-right: 15px;
-      color: $bg-color--secondary;
-      padding: 15px;
-      background-color: lighten($bg-color--primary, 80%);
-      border-radius: 50%;
+    h1 {
+      margin-left: 15px;
     }
   }
   &--container {

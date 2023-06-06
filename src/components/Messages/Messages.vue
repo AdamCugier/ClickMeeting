@@ -18,6 +18,7 @@
 </template>
 
 <script setup lang="ts">
+//@ts-ignore
 import {useStore} from "vuex";
 import './Messages.scss'
 import moment from 'moment';
@@ -25,6 +26,7 @@ import moment from 'moment';
 const {state, commit} = useStore()
 const openMessage = async (id: string) => {
   await commit('SET_ACTIVE_MESSAGE_ID', id)
+  await commit('TOGGLE_MSG_MODAL')
 }
 
 const formatDate = (date: string) => {

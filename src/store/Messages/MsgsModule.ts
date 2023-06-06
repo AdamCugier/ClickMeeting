@@ -27,6 +27,7 @@ export interface MsgsStoreI {
     links: PaginationI
     loading: boolean
     searchMsg: string
+    msgModalToggle: boolean
 }
 
 const {fetchData} = useApi()
@@ -42,7 +43,8 @@ const msgsModule = {
             last: ''
         },
         loading: false,
-        searchMsg: ''
+        searchMsg: '',
+        msgModalToggle: false
     }),
     mutations: {
         UPDATE_MESSAGES(state: MsgsStoreI, data: Array<MessageI>) {
@@ -51,8 +53,11 @@ const msgsModule = {
         UPDATE_PAGINATION_LINKS(state: MsgsStoreI, data: PaginationI) {
             state.links = data
         },
-        TOOGLE_LOADING(state: MsgsStoreI) {
+        TOGGLE_LOADING(state: MsgsStoreI) {
             state.loading = !state.loading
+        },
+        TOGGLE_MSG_MODAL(state: MsgsStoreI) {
+            state.msgModalToggle = !state.msgModalToggle
         },
         SET_ACTIVE_PAGE(state: MsgsStoreI, count: number) {
             state.activePage = count
@@ -69,7 +74,7 @@ const msgsModule = {
     },
     actions: {
         async getMessages({commit, state} : {commit: Function, state: MsgsStoreI}) {
-            commit('TOOGLE_LOADING')
+            commit('TOGGLE_LOADING')
             await fetchData(`messages?_page=${state.activePage}&_limit=10${state.searchMsg && `&q=${state.searchMsg}`}`).then(res => {
                 const link = res.headers.get('Link')
                 if (link) {
@@ -80,7 +85,7 @@ const msgsModule = {
             }).then(data => {
                 commit('UPDATE_MESSAGES', data)
             }).catch((err) => {console.log(err);alert('ERROR ON FETCHING DATA')})
-                .finally(() => commit('TOOGLE_LOADING'))
+                .finally(() => commit('TOGGLE_LOADING'))
         }
     },
     getters: {
