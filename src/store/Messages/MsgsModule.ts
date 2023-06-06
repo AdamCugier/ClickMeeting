@@ -68,15 +68,18 @@ const msgsModule = {
         },
     },
     actions: {
-        async getMessages({commit, state}) {
+        async getMessages({commit, state} : {commit: Function, state: MsgsStoreI}) {
             commit('TOOGLE_LOADING')
-            await fetchData(`messages?_page=${state.activePage}&_limit=10${state.searchMsg && `q=${state.searchMsg}`}`).then(res => {
-                const paginationLinks = parseLinkHeader(res.headers.get('Link'))
-                commit('UPDATE_PAGINATION_LINKS', paginationLinks)
+            await fetchData(`messages?_page=${state.activePage}&_limit=10${state.searchMsg && `&q=${state.searchMsg}`}`).then(res => {
+                const link = res.headers.get('Link')
+                if (link) {
+                    const paginationLinks = parseLinkHeader(link)
+                    commit('UPDATE_PAGINATION_LINKS', paginationLinks)
+                }
                 return res.json()
             }).then(data => {
                 commit('UPDATE_MESSAGES', data)
-            }).catch(() => alert('ERROR ON FETCHING DATA'))
+            }).catch((err) => {console.log(err);alert('ERROR ON FETCHING DATA')})
                 .finally(() => commit('TOOGLE_LOADING'))
         }
     },

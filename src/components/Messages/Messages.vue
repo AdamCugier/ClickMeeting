@@ -11,7 +11,7 @@
       <td>{{msg.title}}</td>
       <td>{{msg.sender}}</td>
       <td>{{msg.email}}</td>
-      <td>{{msg.date}}</td>
+      <td>{{formatDate(msg.date)}}</td>
     </tr>
   </table>
 </div>
@@ -20,9 +20,15 @@
 <script setup lang="ts">
 import {useStore} from "vuex";
 import './Messages.scss'
+import moment from 'moment';
 
 const {state, commit} = useStore()
 const openMessage = async (id: string) => {
   await commit('SET_ACTIVE_MESSAGE_ID', id)
+}
+
+const formatDate = (date: string) => {
+  const d = new Date(date)
+  return moment(d).format('DD/MM/YY HH:mm')
 }
 </script>

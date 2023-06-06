@@ -1,0 +1,26 @@
+@import '../../assets/variables';
+.cm-page-header {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  &--left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &--icon {
+      font-size: 25px;
+      margin-right: 15px;
+      color: $bg-color--secondary;
+      padding: 15px;
+      background-color: lighten($bg-color--primary, 80%);
+      border-radius: 50%;
+    }
+  }
+  &--container {
+    display: grid;
+    width: 100%;
+    max-width: 1200px;
+    grid-template-columns: [left] 40% [middle] auto [right] 40%;
+    grid-template-rows: auto
+  }
+}

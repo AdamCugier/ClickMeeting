@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Button primary label="Zalogiuj" @click="login"/>
+    <Button primary label="Zaloguj" @click="login"/>
   </div>
 </template>
 
