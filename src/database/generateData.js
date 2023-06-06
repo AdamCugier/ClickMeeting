@@ -5,8 +5,8 @@ const count = 12000;
 const defaultUser = [
     {
         "id": 1,
-        "name": "Adam Cugier",
-        "login": "adam_click",
+        "name": "ClickMeeting",
+        "login": "click_user",
         "password": "qwerty"
     }
 ]

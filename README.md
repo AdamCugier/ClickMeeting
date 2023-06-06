@@ -20,27 +20,53 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Required
+```
+required node version 16+
+```
+```
+recomended node v19.8.1
+```
+## Get started
 
-## Project Setup
-
+### 1) Install Packages
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 2) Run JSON-Server to mock API with messages
+
+```sh
+npm run db 
+```
+
+### 3) Run Storybook
+
+```sh
+npm run storybook 
+```
+
+### 4) Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
+### 5) Run Unit Tests with [Vitest](https://vitest.dev/)
+
+```sh
+npm run test:unit
+```
+## Production builds
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
 npm run build
 ```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Storybook production build
 
 ```sh
-npm run test:unit
+npm run build-storybook
 ```
+
+
