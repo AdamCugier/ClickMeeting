@@ -3,10 +3,12 @@ import router from "@/router";
 import useApi from "@/composables/useApi";
 // @ts-ignore
 import {useStore} from "vuex";
+import type {UserI} from "@/store/User/UserModule";
 
 interface useUserI {
     saveUserSession: (id: number) => void,
     closeUserSession: () => void
+    authUser: (login: string, pass: string) => Promise<number>
 }
 
 const useUser = (): useUserI => {
@@ -28,7 +30,17 @@ const useUser = (): useUserI => {
 
     const getUserData = async (id: number) => {
         await fetchData(`users/${id}`).then(res => res.json()).then(data => store.commit('updateUser', data))
-            .catch(() => alert('Bład podczas pobierania uzytkownika'))
+            .catch(() => alert('Błąd podczas pobierania użytkownika'))
+    }
+
+    const authUser = async (login: string, pass: string) => {
+        const user =  await fetchData(`users?login=${login}&password=${pass}`).then(res => res.json())
+            .catch(() => alert('Błąd podczas autoryzacji użytkownika'))
+        if (user.length !== 0) {
+            return user[0].id
+        } else {
+            return 0
+        }
     }
 
     const init = async () => {
@@ -43,7 +55,8 @@ const useUser = (): useUserI => {
 
     return {
         saveUserSession,
-        closeUserSession
+        closeUserSession,
+        authUser,
     }
 }
 export default useUser;

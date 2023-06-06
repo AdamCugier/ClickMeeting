@@ -1,17 +1,20 @@
 <template>
-  <div>
-    <Button primary label="Zaloguj" @click="login"/>
-  </div>
+  <LoginLayout>
+    <template #header>
+      <LoginHeader/>
+    </template>
+    <template #body>
+      <LoginForm/>
+    </template>
+    <template #footer>
+      <LoginFooter/>
+    </template>
+  </LoginLayout>
 </template>
 
 <script setup lang="ts">
-import Button from "@/components/Buttons/Button/Button.vue";
-import useUser from "@/composables/useUser";
-import router from "@/router";
-
-const {saveUserSession} = useUser()
-const login = async (): Promise<void> => {
-  await saveUserSession(1);
-  router.push({name: 'Home'})
-}
+import LoginLayout from "@/layouts/Login/LoginLayout.vue";
+import LoginForm from "@/components/Login/LoginForm/LoginForm.vue";
+import LoginFooter from "@/components/Login/LoginFooter/LoginFooter.vue";
+import LoginHeader from "@/components/Login/LoginHeader/LoginHeader.vue";
 </script>
