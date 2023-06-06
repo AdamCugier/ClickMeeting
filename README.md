@@ -56,6 +56,12 @@ npm run dev
 ```sh
 npm run test:unit
 ```
+## USER to login_app
+!IMPORTANT! JSON-server doesn't have auth service so authorization is mocked and based on filters by login and password 
+````
+login: click_user
+passowrd: qwerty
+````
 ## Production builds
 
 ### Type-Check, Compile and Minify for Production
