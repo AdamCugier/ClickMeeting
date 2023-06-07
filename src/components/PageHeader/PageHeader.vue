@@ -18,6 +18,7 @@
 <script setup lang="ts">
 import './PageHeader.scss'
 import RoundedButton from "@/components/Buttons/RoundedButton/RoundedButton.vue";
+//@ts-ignore
 import {useStore} from "vuex";
 
 interface PageHeaderI {

@@ -1,7 +1,7 @@
 <template>
   <section class="cm-nav">
     <div class="cm-nav--logo">
-      <img src="src/assets/img/logo_sm.svg">
+      <img src="/src/assets/img/logo_sm.svg">
     </div>
     <div class="cm-nav--items">
       <div>

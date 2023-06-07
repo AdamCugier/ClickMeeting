@@ -3,7 +3,7 @@
     <input
         :type="type"
         :value="modelValue"
-        @change="(e) => $emit('update:modelValue', e.target.value)"
+        @change="(e) => $emit('update:modelValue', (e.target! as HTMLInputElement).value)"
         :placeholder="label"
         autocomplete="off"
         :id="id"

@@ -16,6 +16,7 @@
 import './MainPanel.scss';
 import Nav from "@/components/Nav/Nav.vue";
 import {computed} from "vue";
+//@ts-ignore
 import {useStore} from "vuex";
 
 const {state} = useStore()
