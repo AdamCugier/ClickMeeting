@@ -5,6 +5,7 @@
     width: 100%;
     border-spacing: 0;
     margin-bottom: 25px;
+
     &--header {
       color: white;
       background-color: $bg-color--primary;
@@ -12,22 +13,53 @@
       outline: none;
       font-weight: 300;
       font-size: 16px;
+
       th {
         padding: 10px;
         text-align: left;
       }
     }
+
     &--body {
       cursor: pointer;
-      &:nth-child(2n + 1){
+
+      &:nth-child(2n + 1) {
         background-color: rgba($bg-color--primary, 0.05);
       }
+
       &:hover {
         background-color: rgba($bg-color--secondary, 0.1);
       }
+
       td {
         padding: 10px;
       }
     }
+  }
+
+  &--mobile {
+    display: none;
+  }
+}
+
+@media (max-width: $sm) {
+  .cm-messages {
+    &--table {
+      display: none;
+    }
+
+    &--mobile {
+      display: grid;
+      grid-template-columns: [col1] calc(50% - 5px) [col2] calc(50% - 5px);
+      grid-gap: 10px;
+      grid-auto-rows: auto;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .cm-messages--mobile {
+    grid-template-columns: [col1] calc(100% - 10px);
   }
 }

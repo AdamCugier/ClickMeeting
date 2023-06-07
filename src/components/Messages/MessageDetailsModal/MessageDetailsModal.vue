@@ -9,7 +9,7 @@
     <template #body>
       <div class="cm-msg-modal--message-details">
         <TextWithLabel label="Email:" :text="msg.email"/>
-        <TextWithLabel label="Data:" :text="msgDate" position="right"/>
+        <TextWithLabel label="Data:" :text="formatDate(msg.date)" position="right"/>
       </div>
       <div class="cm-msg-modal--message-details--long-message">
       <TextWithLabel label="Wiadomość:" :text="msg.message"/>
@@ -34,9 +34,10 @@ import './MessageDetailsModal.scss';
 import RoundedButton from "@/components/Buttons/RoundedButton/RoundedButton.vue";
 import TextWithLabel from "@/components/TextWithLabel/TextWithLabel.vue";
 import moment from "moment/moment";
+import useFunctions from "@/composables/useFunctions";
 
 const {getters, commit} = useStore()
+const {formatDate} =useFunctions()
 const msg = computed<MessageI>((() => getters.activeMessage))
-const msgDate = computed(() => moment(msg.value.date).format('DD/MM/YY HH:mm'))
 </script>
 

@@ -7,7 +7,7 @@ function parseLinkHeader(linkHeader: string) {
 export interface MessageI {
     id: string
     title: string
-    date: Date
+    date: string
     sender: string
     email: string
     message: string
