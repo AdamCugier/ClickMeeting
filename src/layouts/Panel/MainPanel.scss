@@ -24,8 +24,9 @@
     grid-column-end: page-view;
     grid-row-start: footer;
     grid-row-end: footer;
-    text-align: center;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     span {
       font-size: 13px;
       color: rgba(27, 31, 43, 0.27);

@@ -15,8 +15,8 @@
   }
 
   &--sm {
-    font-size: 18px;
-    padding: 5px;
+    font-size: 16px;
+    padding: 8px;
   }
 
   &--md {
@@ -51,8 +51,8 @@
 @media (max-width: $xs) {
   .cm-rounded-btn {
     &--md, &--lg {
-      font-size: 18px;
-      padding: 5px;
+      font-size: 16px;
+      padding: 8px;
     }
   }
 }

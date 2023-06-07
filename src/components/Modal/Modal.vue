@@ -1,5 +1,5 @@
 <template>
-<div class="cm-modal--overlay">
+  <div class="cm-modal--overlay">
     <div class="cm-modal--container">
       <div class="cm-modal--header">
         <slot name="header">
@@ -17,13 +17,8 @@
         </slot>
       </div>
     </div>
-</div>
+  </div>
 </template>
 <script setup lang="ts">
 import './Modal.scss'
 </script>
-
-
-<style scoped>
-
-</style>

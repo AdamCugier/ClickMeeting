@@ -11,7 +11,9 @@
         <TextWithLabel label="Email:" :text="msg.email"/>
         <TextWithLabel label="Data:" :text="msgDate" position="right"/>
       </div>
+      <div class="cm-msg-modal--message-details--long-message">
       <TextWithLabel label="Wiadomość:" :text="msg.message"/>
+      </div>
       <TextWithLabel label="Nadawca:" :text="msg.sender"/>
     </template>
     <template #footer>
