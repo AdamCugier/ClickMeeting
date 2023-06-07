@@ -8,9 +8,10 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
 import {faQuinscape} from "@fortawesome/free-brands-svg-icons";
 import {faCircleXmark} from "@fortawesome/free-regular-svg-icons";
-import {faHouseChimneyWindow, faMessage, faPowerOff, faChevronLeft, faChevronRight, faAnglesRight, faAnglesLeft, faMagnifyingGlass, faXmark, faKey, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
+import {faBars, faHouseChimneyWindow, faMessage, faPowerOff, faChevronLeft, faChevronRight, faAnglesRight, faAnglesLeft, faMagnifyingGlass, faXmark, faKey, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 
 
+library.add(faBars)
 library.add(faQuinscape)
 library.add(faHouseChimneyWindow)
 library.add(faMessage)

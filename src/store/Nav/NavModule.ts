@@ -1,10 +1,17 @@
- const navModule = {
+interface NavStoreI {
+    toggleNav: boolean
+}
+
+const navModule = {
     state: () => ({
-        count: 1
+        toggleNav: false
     }),
     mutations: {
+        TOGGLE_NAV(state: NavStoreI) {
+            state.toggleNav = !state.toggleNav
+        },
     },
     actions: {},
     getters: {}
 }
- export default navModule
+export default navModule

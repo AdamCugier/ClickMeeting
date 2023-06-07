@@ -1,8 +1,10 @@
+@import '../../assets/variables';
 .cm-main-panel {
   &--page-view {
     overflow-y: auto;
   }
   &--container {
+    transition: 0.3s;
     display: grid;
     width: 100%;
     grid-template-columns: [nav] 60px [page-view] auto;
@@ -14,6 +16,7 @@
     grid-column-end: nav;
     grid-row-start: body;
     grid-row-end: body;
+    transition: 0.4s 0.05s ease-in;
   }
 
   &--footer {
@@ -27,6 +30,23 @@
       font-size: 13px;
       color: rgba(27, 31, 43, 0.27);
       font-weight: 900;
+    }
+  }
+}
+@media (max-width: $sm) {
+  .cm-main-panel {
+    &--container {
+      grid-template-columns: [nav] 0px [page-view] auto;
+      .cm-main-panel--nav {
+        opacity: 0;
+      }
+
+    }
+    &--nav-opened {
+      grid-template-columns: [nav] 60px [page-view] auto;
+      .cm-main-panel--nav {
+        opacity: 1;
+      }
     }
   }
 }
