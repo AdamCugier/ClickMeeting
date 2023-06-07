@@ -4,15 +4,18 @@
   background-color: $bg-color--primary;
   min-height: 100%;
   box-shadow: inset 0 -2px 0 rgb(0 0 0 / 16%), 0 2px 0 rgb(0 0 0 / 11%);
+
   &--logo {
     height: 32px;
     color: $bg-color--secondary;
-    padding: 30px 14px;
+    padding: 36px 10px;
+    margin-bottom: 32px;
   }
+
   &--items {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100vh - 94px);
+    height: calc(100vh - 104px);
   }
 }

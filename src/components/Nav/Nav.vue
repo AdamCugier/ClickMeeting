@@ -1,7 +1,7 @@
 <template>
   <section class="cm-nav">
-    <div>
-      <font-awesome-icon icon="fa-brands fa-quinscape" class="cm-nav--logo"/>
+    <div class="cm-nav--logo">
+      <img src="src/assets/img/logo_sm.svg">
     </div>
     <div class="cm-nav--items">
       <div>

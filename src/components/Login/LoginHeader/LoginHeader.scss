@@ -1,8 +1,35 @@
-.cm-login-header{
+@import '../../../assets/variables';
+
+.cm-login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--logo {
+    width: 200px;
+    margin-top: 30px;
+  }
+
   &--text {
-    font-family: 'robotolight', Helvetica,Arial,sans-serif;
+    font-family: 'robotolight', Helvetica, Arial, sans-serif;
     text-align: center;
     font-weight: 100;
-    font-size: 40px;
+    font-size: 36px;
+  }
+}
+
+@media (max-width: $sm) {
+  .cm-login-header {
+    &--text {
+      font-size: 28px;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .cm-login-header {
+    &--text {
+      font-size: 24px;
+    }
   }
 }

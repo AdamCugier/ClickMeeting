@@ -8,7 +8,7 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
 import {faQuinscape} from "@fortawesome/free-brands-svg-icons";
 import {faCircleXmark} from "@fortawesome/free-regular-svg-icons";
-import {faHouseChimneyWindow, faMessage, faPowerOff, faChevronLeft, faChevronRight, faAnglesRight, faAnglesLeft, faMagnifyingGlass, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faHouseChimneyWindow, faMessage, faPowerOff, faChevronLeft, faChevronRight, faAnglesRight, faAnglesLeft, faMagnifyingGlass, faXmark, faKey, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 
 
 library.add(faQuinscape)
@@ -23,6 +23,8 @@ library.add(faAnglesRight)
 library.add(faMagnifyingGlass)
 library.add(faCircleXmark)
 library.add(faXmark)
+library.add(faKey)
+library.add(faPaperPlane)
 
 const app = createApp(App)
 

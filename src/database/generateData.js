@@ -8,6 +8,12 @@ const defaultUser = [
         "name": "ClickMeeting",
         "login": "click_user",
         "password": "qwerty"
+    },
+    {
+        "id": 2,
+        "name": "Adam Cugier",
+        "login": "click_adam",
+        "password": "qwerty"
     }
 ]
 
