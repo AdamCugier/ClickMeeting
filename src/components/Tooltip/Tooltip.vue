@@ -17,10 +17,10 @@ interface TooltipI {
   /**
    * Tooltip position
    */
-  position?: 'left' | 'top' | 'right' | 'bottom',
+  position?: 'left' | 'top' | 'right' | 'bottom' | string,
 }
 
-const props = withDefaults(defineProps<TooltipI>(), {position: 'right'});
+const props = withDefaults(defineProps<TooltipI>(), {text: 'tooltip', position: 'right'});
 
 const classes = computed(() => ({
   'cm-tooltip': true,
