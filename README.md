@@ -61,6 +61,15 @@ npm run test:unit
 ````
 login: click_user
 passowrd: qwerty
+
+or
+
+login: click_adam
+passowrd: qwerty
+
+or
+
+you can add your own user in src/database/generateData.js
 ````
 ## Production builds
 
