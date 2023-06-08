@@ -1,14 +1,16 @@
 <template>
-  <form>
-    <div class="cm-login-form--inputs-wrapper">
-      <InputCM id="login" label="Login" v-model="login" icon="fa-solid fa-paper-plane"/>
-      <InputCM id="password" label="Hasło" type="password" v-model="password" icon="fa-solid fa-key"/>
-    </div>
-    <div v-if="error" class="cm-login-form--error-msg">Błędny login lub hasło</div>
-    <div class="cm-login-form--button">
-      <Button label="Zaloguj się" primary size="md" @click="loginUser"/>
-    </div>
-  </form>
+  <div class="cm-login-form">
+    <form>
+      <div class="cm-login-form--inputs-wrapper">
+        <InputCM id="login" label="Login" v-model="login" icon="fa-solid fa-paper-plane"/>
+        <InputCM id="password" label="Hasło" type="password" v-model="password" icon="fa-solid fa-key"/>
+      </div>
+      <div v-if="error" class="cm-login-form--error-msg">Błędny login lub hasło</div>
+      <div class="cm-login-form--button">
+        <Button label="Zaloguj się" primary size="md" @click="loginUser"/>
+      </div>
+    </form>
+  </div>
 </template>
 <script setup lang="ts">
 import useUser from "@/composables/useUser";
