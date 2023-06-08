@@ -24,12 +24,11 @@
 //@ts-ignore
 import {useStore} from "vuex";
 import './Messages.scss'
-import moment from 'moment';
 import MessageCard from "@/components/Messages/MessageCard/MessageCard.vue";
 import useFunctions from "@/composables/useFunctions";
 import useMessage from "@/composables/useMessage";
 
 const {formatDate} = useFunctions();
-const {state, commit} = useStore();
+const {state} = useStore();
 const {openMessage} = useMessage()
 </script>

@@ -1,17 +1,17 @@
 <template>
   <div v-if="lastPage > 1">
     <div class="cm-pagination">
-      <button class="cm-pagination--btn" v-if="activePage > 1" @click="() => changePage(1)">
+      <button class="cm-pagination--btn cm-pagination--btn-first" v-if="activePage > 1" @click="() => changePage(1)">
         <font-awesome-icon icon="fa-solid fa-angles-left"/>
       </button>
-      <button class="cm-pagination--btn" v-if="activePage > 2" @click="() => changePage(activePage - 1)">
+      <button class="cm-pagination--btn cm-pagination--btn-prev" v-if="activePage > 2" @click="() => changePage(activePage - 1)">
         {{ activePage - 1 }}
       </button>
       <button class="cm-pagination--btn cm-pagination--btn-active">{{ activePage }}</button>
-      <button class="cm-pagination--btn" v-if="activePage < lastPage -1" @click="() => changePage(activePage + 1)">
+      <button class="cm-pagination--btn cm-pagination--btn-next" v-if="activePage < lastPage -1" @click="() => changePage(activePage + 1)">
         {{ activePage + 1 }}
       </button>
-      <button class="cm-pagination--btn" v-if="activePage !== lastPage" @click="() => changePage(lastPage)">
+      <button class="cm-pagination--btn cm-pagination--btn-last" v-if="activePage !== lastPage" @click="() => changePage(lastPage)">
         <font-awesome-icon icon="fa-solid fa-angles-right"/>
       </button>
     </div>
