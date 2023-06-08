@@ -16,7 +16,7 @@ const userModule = {
         }
     }),
     mutations: {
-        updateUser(state: UserStoreI, payload: UserI) {
+        UPDATE_USER(state: UserStoreI, payload: UserI) {
             state.user = payload
         }
     },

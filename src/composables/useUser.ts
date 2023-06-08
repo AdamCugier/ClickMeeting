@@ -29,7 +29,7 @@ const useUser = (): useUserI => {
     }
 
     const getUserData = async (id: number) => {
-        await fetchData(`users/${id}`).then(res => res.json()).then(data => store.commit('updateUser', data))
+        await fetchData(`users/${id}`).then(res => res.json()).then(data => store.commit('UPDATE_USER', data))
             .catch(() => alert('Błąd podczas pobierania użytkownika'))
     }
 

@@ -61,5 +61,6 @@
 @media (max-width: 600px) {
   .cm-messages--mobile {
     grid-template-columns: [col1] 100%;
+    grid-gap: 20px;
   }
 }
